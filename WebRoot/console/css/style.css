@@ -1,0 +1,126 @@
+body {
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	background:url(../images/login_03.gif) repeat-x #152753;
+	font-size: 12px;
+	color: #adc9d9;
+}
+#top {
+	margin: 0 auto;
+	clear:both;
+	height:318px;
+	width:847px;
+	background:url(../images/login_04.gif) no-repeat;
+}
+#center {
+	height:84px;
+	text-align:center;
+}
+#center_left {
+	margin-left:216px;
+	float:left;
+	background:url(../images/login_06.gif) no-repeat;
+	height:84px;
+	width:381px;
+}
+/* IE7 HACK*/
+*+html #center_left {
+	margin-left:206px !important;
+}
+/* END HACK*/
+#center_middle {
+	float:left;
+	background:url(../images/login_07.gif) no-repeat;
+	height:84px;
+	width:162px;
+	
+}
+#center_middle_right {
+	float:left;
+	background:url(../images/login_08.gif) no-repeat;
+	height:84px;
+	width:26px;
+}
+#center_submit {
+	float:left;
+	background:url(../images/login_09.gif) no-repeat;
+	height:84px;
+	width:67px;
+}
+#center_right {
+	float:left;
+	background:url(../images/login_10.gif) no-repeat;
+	height:84px;
+	width:211px;
+}
+#footer {
+	margin:0 auto;
+	background:url(../images/login_11.gif) no-repeat;
+	height:206px;
+	width:847px;
+	text-align: center;
+	
+}
+INPUT {
+	width:100px;
+	height:17px;
+	background-color:#87adbf;
+	border:solid 1px #153966;
+	font-size:12px;
+	color:#283439;
+}
+.chknumber_input {
+	width:40px;
+}
+.user {
+	margin: 6px auto;
+}
+/* IE7 HACK*/
+*+html .user {
+	margin: 4px auto;
+}
+/* END HACK*/
+.chknumber {
+	margin-bottom:3px;
+	text-align:left;
+	padding-left:3px
+}
+.button {
+	margin: 15px auto;
+}
+IMG {
+	border:none;
+	cursor:pointer;
+}
+FORM {
+	margin:0;
+	padding:0
+}
+
+.STYLE1 {
+	color: #e1e2e3;
+	font-size: 12px;
+}
+.STYLE6 {color: #000000; font-size: 12; }
+.STYLE10 {color: #000000; font-size: 12px; }
+.STYLE19 {
+	color: #344b50;
+	font-size: 12px;
+	text-align: center;
+}
+.STYLE21 {
+	font-size: 12px;
+	color: #3b6375;
+}
+.STYLE22 {
+	font-size: 12px;
+	color: #295568;
+}
+
+.list .head {font-size: 22px;}
+.list {margin: 50px 50px 50px 50px;color:#314F76 ; }
+.list ul {font-size: 16px; }
+.list hr {background:#ADD2DA; }
+.list ul li {margin-top: 5px;}
+.list #lable {width:140px;}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="cluster" extends="futures-default" namespace="/cluster">
+		
+		
+		<action name="clusterConfig_*" class="com.hundsun.jinyb.action.ClusterConfigAction" method="{1}">
+			<result name="add" type="redirectAction">clusterConfig_list</result>
+			<result name="present" type="redirectAction">clusterConfig_list</result>
+			<result name="list">/console/ClusterManagement/listClusterConfig.jsp</result>
+		    <result name="detail">/console/ClusterManagement/detailClusterConfig.jsp</result>	
+		    <result name="moniter">/console/ClusterManagement/moniterCluster.jsp</result>					
+						
+			<result name="cluster" type="redirectAction">clusterConfig_list</result>
+		</action>
+		
+		<action name="clusterHistory_*" class="com.hundsun.jinyb.action.ClusterHistoryAction" method="{1}">
+			<result name="present" type="redirectAction">clusterHistory_list</result>
+			<result name="list">/console/ClusterManagement/listClusterHistory.jsp</result>
+			<result name="detail">/console/ClusterManagement/detailClusterHistory.jsp</result>
+			
+		</action>
+		
+		<action name="clusterResult_*" class="com.hundsun.jinyb.action.ClusterResultAction" method="{1}">
+			<result name="list">/console/ClusterManagement/listClusterResult.jsp</result>
+			<result name="detail">/console/ClusterManagement/listClusterResult.jsp</result>
+		</action>
+		
+		<action name="cluster_*" class="com.hundsun.jinyb.action.ClusterAction" method="{1}">
+			<result name="clusterOver" type="redirectAction">clusterResult_list</result>
+		</action>
+		
+	
+		
+		
+		
+		
+		
+	</package>
+
+</struts>
+

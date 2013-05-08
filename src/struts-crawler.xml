@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="crawler" extends="futures-default" namespace="/crawler">
+		
+		<action name="crawlerSeeds_*" class="com.hundsun.jinyb.action.CrawlerSeedsAction" method="{1}">
+			<result name="list">/console/CrawlerManagement/listSeeds.jsp</result>
+		</action>
+		<action name="crawlerConfig_*" class="com.hundsun.jinyb.action.CrawlerConfigAction" method="{1}">
+			<result name="toAdd">/console/CrawlerManagement/addCrawlerConfig.jsp</result>
+			<result name="add" type="redirectAction">crawlerConfig_list</result>
+			<result name="present" type="redirectAction">crawlerConfig_list</result>
+			<result name="list">/console/CrawlerManagement/listCrawlerConfig.jsp</result>
+			<result name="toPresent">/console/CrawlerManagement/moniterCrawler.jsp</result>
+			<result name="detail">/console/CrawlerManagement/detailCrawlerConfig.jsp</result>
+		</action>
+		
+		<action name="crawlerHistory_*" class="com.hundsun.jinyb.action.CrawlerHistoryAction" method="{1}">
+			
+			
+			
+			<result name="list">/console/CrawlerManagement/listCrawlerHistory.jsp</result>
+			
+		</action>
+		<action name="crawler_*" class="com.hundsun.jinyb.action.CrawlerAction" method="{1}">
+			<result name="success" type="json">
+			   <param name="includeProperties">
+			      ok,msg
+			   </param>
+			</result><!--返回的是json的数据,被前台jquery调用  -->
+			<result name="moniter" type="json">
+			   <param name="includeProperties">
+			      ok
+			    
+			   </param>
+			</result><!--返回的是json的数据,被前台jquery调用  -->
+		</action>
+		
+		
+	</package>
+
+</struts>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+									http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+									http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+									http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+<bean id="userDao" class="com.jinyb.crawler.dao.impl.UserDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+<bean id="crawlerSeedsDao" class="com.jinyb.crawler.dao.impl.CrawlerSeedsDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+<bean id="newsDao" class="com.jinyb.crawler.dao.impl.NewsDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+<bean id="userMsgDao" class="com.jinyb.crawler.dao.impl.UserMsgDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+
+<bean id="crawlerConfigDao" class="com.jinyb.crawler.dao.impl.CrawlerConfigDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+<bean id="crawlerHistoryDao" class="com.jinyb.crawler.dao.impl.CrawlerHistoryDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+<bean id="clusterConfigDao" class="com.jinyb.crawler.dao.impl.ClusterConfigDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+<bean id="clusterResultDao" class="com.jinyb.crawler.dao.impl.ClusterResultDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+<bean id="clusterHistoryDao" class="com.jinyb.crawler.dao.impl.ClusterHistoryDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+<bean id="wordDao" class="com.jinyb.crawler.dao.impl.WordDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+
+<bean id="webConfigDao" class="com.jinyb.crawler.dao.impl.WebConfigDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+</beans>									

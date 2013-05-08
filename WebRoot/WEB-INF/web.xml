@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<!-- 为Listener指定spring配置文件 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:ssh-*.xml</param-value>
+	</context-param>
+	<!-- 服务器启动时，实例化Spring容器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 为了Spring中scope=request,session RequestContextListener SessionScope.class -->
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+<!--这个是处理hibernate延迟加载中，对于一对多的关联中，解决no sessoin和session is colsed的
+OpenSessionInViewFilter的主要功能是用来把一个Hibernate Session和一次完整的请求过程对应的线程相绑定。
+目的是为了实现"Open Session in View"的模式。例如： 它允许在事务提交之后延迟加载显示所需要的对象。 
+(hibernate默认使用延迟加载)Hibernate会话会在Filter的doFilter方法用spring解决这个问题而且不用把lazy设置为false，提高性能。 -->
+<filter>     
+<filter-name>hibernateFilter</filter-name>     
+<filter-class>     
+org.springframework.orm.hibernate3.support.OpenSessionInViewFilter      
+</filter-class>     
+</filter>      
+<filter-mapping>     
+<filter-name>hibernateFilter</filter-name>     
+<url-pattern>/*</url-pattern>     
+</filter-mapping>
+	<!-- 配置Struts2控制器 -->
+	<filter>
+		<filter-name>struts2Controller</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2Controller</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>   
+         <dispatcher>FORWARD</dispatcher>     
+	</filter-mapping> 
+	<!-- 用于将iso-8859-1的默认字符集进行过过滤为相应的字符集 ，注意了，这里只对post的方法起作用。另外就是form的默认方法是get -->
+	
+		<!-- <filter>
+		<filter-name>CharsetFilter</filter-name>
+		<filter-class>com.hundsun.futures.filter.CharsetFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>using</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+
+	<display-name></display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+
+</web-app>
