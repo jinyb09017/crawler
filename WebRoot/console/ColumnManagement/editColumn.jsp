@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -13,7 +13,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>爬虫配置管理--增加配置</title>
+<title>编辑栏目</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -25,23 +25,20 @@
 </head>
 
 <body>
-    <div class="list">
-     <div class="head">增加聚类配置</div>
+<div class="list">
+     <div class="head">修改栏目</div>
      <hr id="line" />
-    <form action="/crawler/crawler/crawlerConfig_add" method="get" >
+    <form action="column/column_upd" method="get" > 
      <ul>
-        <li><span id="lable">线程个数：</span><input type="text" name="crawlerConfig.ccThreads" value="" /></li>
-        <li><span id="lable">栏目站点：</span>
-			<s:checkboxlist list="#request.crawlerSeedsMap"  listKey="key" 
-			listValue="value" name="crawlerConfig.ccWebSeeds"></s:checkboxlist></li>
-       
+        <li><span id="lable">栏目名称：</span><input type="text" name="column" value="${col.column }" /></li>
+        
        
      </ul>
+      <input type="hidden" name="myCol.id" value="${col.id }">
+			<input type="submit"
+				value="更新" />
      </form>
-     <ul id="commit">
-        <li><span id="lable"><input type="submit" value="增加"></span></li>
-     </ul>
   </div>
-
+	
 </body>
 </html>

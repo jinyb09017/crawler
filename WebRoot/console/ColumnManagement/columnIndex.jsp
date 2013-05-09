@@ -1,7 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -14,7 +12,6 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>聚类配置列表</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -42,6 +39,7 @@ body {
 
 <body>
 	<div>
+	<div>
 	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td height="30"><table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -68,34 +66,23 @@ body {
         <td width="5%" height="20" bgcolor="d3eaef" class="STYLE10"><div align="center">
           <input style="width:100%;" type="checkbox" name="checkbox" id="checkbox" />
         </div></td>
-        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">数目</span></div></td>
-        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">配置人</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">聚类文章基数</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">计划聚类数目</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">实际聚类数目</span></div></td>
-        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">热点词数</span></div></td>
+        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">编号</span></div></td>
+        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">栏目名称</span></div></td>
+        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">操作</span></div></td>
         
-        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">聚类开始时间</span></div></td>
-        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">聚类结束时间</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">是否当前配置</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">设为当前配置</span></div></td>
       </tr>
-     <c:forEach items="${clusterConfigList}" var="clusterConfig" begin="0"  varStatus="s">
+			<c:forEach items="${columnList}" var="column" begin="0"  varStatus="s">
       
       <tr>
         <td height="20" bgcolor="#FFFFFF"><div align="center">
           <input style="width:100%;" type="checkbox" name="checkbox2" id="checkbox2" />
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19">${s.index+1}</span></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.admin.name}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.clcwebPageNum}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.clcClusterNum}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><c:if test="${clusterConfig.realClusterNum==0 }">还未进行聚类</c:if><c:if test="${clusterConfig.realClusterNum>0}">${clusterConfig.realClusterNum}</c:if></div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">${clusterConfig.clcWordNum}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.clcStartTime}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.clcEndTime}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><c:if test="${clusterConfig.present==true }">是</c:if><c:if test="${clusterConfig.present==false }">否</c:if></div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/crawler/cluster/clusterConfig_present?clusterConfig.id=${clusterConfig.id }">设置为当前</a></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${column.column}</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><a href="column/column_del.action?myCol.id=${column.id}">
+         <input type="button" value="删除" /></a>  
+         <a href="<%=path %>/column/column_search.action?myCol.id=${column.id}"><input type="button" value="修改"/></a></div></td>
+       
       </tr>
       
      </c:forEach> 
@@ -124,8 +111,8 @@ body {
     </table></td>
   </tr>
 </table>
-		<a href="/crawler/cluster/clusterConfig_startCluster">cluster</a>  
-		<a href="/crawler/console/ClusterManagement/addClusterConfig.jsp"><input type="button" value="增加配置"></a>
+		
 	</div>
+	<div><a href="<%=path %>/console/ColumnManagement/addColumn.jsp"><input type="button" value="增加" /></a></div>
 </body>
 </html>

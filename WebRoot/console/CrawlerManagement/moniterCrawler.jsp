@@ -44,7 +44,7 @@ body {background: white;}
 		</c:forEach>
 		  
 		</table>
-		<form id="crawler" action="" method="post">
+		<form id="crawler" action="crawler/crawler_startCrawler" method="post">
 		   <input type="checkbox" value="是否确认当前配置">
 		   <input type="submit" value="开始爬取">
 		</form>

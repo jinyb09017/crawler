@@ -32,6 +32,10 @@
        <value>com/jinyb/crawler/entity/CrawlerHistory.hbm.xml</value>
        <value>com/jinyb/crawler/entity/ClusterConfig.hbm.xml</value>
        <value>com/jinyb/crawler/entity/WebConfig.hbm.xml</value>
+       <value>com/jinyb/crawler/entity/IndexConfig.hbm.xml</value>
+       <value>com/jinyb/crawler/entity/IndexHistory.hbm.xml</value>
+       <value>com/jinyb/crawler/entity/Article.hbm.xml</value>
+       <value>com/jinyb/crawler/entity/Column.hbm.xml</value>
        
       
     </list>

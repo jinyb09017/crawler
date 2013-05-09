@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="article" extends="futures-default" namespace="/article">
+		<!-- 新闻列表 -->
+		<action name="article_*" class="com.hundsun.jinyb.action.ArticleAction" method="{1}">
+			<result name="list">/console/ArticleManagement/articleIndex.jsp</result>
+			<result name="del" type="redirectAction">article_list</result>
+			<result name="upd" type="redirectAction">article_list</result>
+			<result name="forwardAdd">/console/ArticleManagement/addArticle.jsp</result>
+			<result name="edit">/console/ArticleManagement/editArticle.jsp</result>
+			<result name="add" type="redirectAction">article_list</result>
+			<result name="detail">/ArticleManagement/aticleShow.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>
+

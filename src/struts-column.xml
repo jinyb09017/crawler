@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+	<package name="column" extends="futures-default" namespace="/column">
+		<action name="column_*" class="com.hundsun.jinyb.action.ColumnAction"
+			method="{1}">
+			<result name="list" type="dispatcher">/console/ColumnManagement/columnIndex.jsp
+			</result>
+			<result name="edit" type="dispatcher">/console/ColumnManagement/editColumn.jsp
+			</result>
+			<result name="add" type="redirectAction">column_list			</result>
+			<result name="del" type="redirectAction">column_list</result>
+			<result name="upd" type="redirectAction">column_list</result>
+		</action>
+		
+		
+		
+		
+
+	</package>
+
+</struts>

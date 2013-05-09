@@ -7,8 +7,11 @@
    <include file="struts-webConfig.xml"></include>
   <include file="struts-crawler.xml"></include>
   <include file="struts-cluster.xml"></include>
+  <include file="struts-index.xml"></include>
   <include file="struts-usermanagement.xml"></include>
    <include file="struts-webinfeng.xml"></include>
+   <include file="struts-column.xml"></include>
+   <include file="struts-article.xml"></include>
   <package name="futures-default" extends="json-default">
   <interceptors>
        <interceptor name="transaction" class="com.hundsun.futures.interceptor.TransactionInterceptor"></interceptor>

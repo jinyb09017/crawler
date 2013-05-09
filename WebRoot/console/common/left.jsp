@@ -109,14 +109,16 @@ body {
     </li>
     <li> <a class="head">搜索设置管理</a>
       <ul>
-        <li><a href="messages.php" target="rightFrame">查看/删除留言</a></li>
-        <li><a href="comments.php" target="rightFrame">查看/删除评论</a></li>
+        <li><a href="index/indexConfig_list" target="rightFrame">查看索引配置</a></li>
+        <li><a href="index/indexHistory_list" target="rightFrame">查看索引历史</a></li>
+        <li><a href="index/indexConfig_moniter" target="rightFrame">启动索引主页</a></li>
+        
       </ul>
     </li>
     <li> <a class="head">资讯信息管理</a>
       <ul>
-        <li><a href="AddLink.php" target="rightFrame">栏目管理</a></li>
-        <li><a href="Links.php" target="rightFrame">新闻管理</a></li>
+        <li><a href="column/column_list" target="rightFrame">栏目管理</a></li>
+        <li><a href="article/article_list" target="rightFrame">新闻管理</a></li>
       </ul>
     </li>
      <li> <a class="head">用户信息管理</a>

@@ -53,23 +53,25 @@
 </head>
 
 <body>
-	<div class="list">
-     <div class="head">增加聚类配置</div>
+     <div class="list">
+     <div class="head">增加索引配置</div>
      <hr id="line" />
-     <form action="/crawler/cluster/clusterConfig_add" method=post> 
+     <form action="/crawler/index/indexConfig_add" method=post> 
      <ul>
-        <li><span id="lable">聚类个数：</span><input type="text" name="clusterConfig.clcClusterNum"></li>
-        <li><span id="lable">热点词数：</span><input type="text" name="clusterConfig.clcWordNum"></li>
-        <li><span id="lable">开始时间：</span><input id="startTime" type="text" name="clusterConfig.clcStartTime"></li>
-        <li><span id="lable">结束时间：</span><input type="text" id="endTime" name="clusterConfig.clcEndTime"></li>
+        <li><span id="lable">聚引目录：</span><input type="text" name="indexConfig.dir"></li>
+        <li><span id="lable">开始时间：</span><input id="startTime" type="text" name="indexConfig.startTime"></li>
+        <li><span id="lable">结束时间：</span><input type="text" id="endTime" name="indexConfig.endTime"></li>
+        
+        <c:if test="${!empty msg }"><li style="color: red">${msg }</li></c:if>
         
      </ul>
+     </form>
      <ul id="commit">
         <li><span id="lable"><input type="submit" value="增加"></span></li>
      </ul>
-     
      </form>
   </div>
+	
 	
 </body>
 </html>

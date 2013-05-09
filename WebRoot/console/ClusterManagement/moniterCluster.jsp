@@ -35,7 +35,12 @@ body {background: white;}
 
         
      </ul>
+     <form id="cluster" action="cluster/cluster_startCluster" method="post">
+		   <input type="checkbox" value="是否确认当前配置">
+		   <input type="submit" value="开始爬取">
+		</form>
   </div>
+	
 	
 </body>
 </html>

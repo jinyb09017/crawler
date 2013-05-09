@@ -14,7 +14,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>聚类配置列表</title>
+<title>索引配置列表</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -51,7 +51,7 @@ body {
             <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="6%" height="19" valign="bottom"><div align="center"><img src="console/images/tb.gif" width="14" height="14" /></div></td>
-                <td width="94%" valign="bottom"><span class="STYLE1"> 管理人员基本信息列表</span></td>
+                <td width="94%" valign="bottom"><span class="STYLE1"> 索引基本信息列表</span></td>
               </tr>
             </table></td>
             <td><div align="right"><span class="STYLE1">
@@ -68,40 +68,38 @@ body {
         <td width="5%" height="20" bgcolor="d3eaef" class="STYLE10"><div align="center">
           <input style="width:100%;" type="checkbox" name="checkbox" id="checkbox" />
         </div></td>
-        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">数目</span></div></td>
+        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">编号</span></div></td>
         <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">配置人</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">聚类文章基数</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">计划聚类数目</span></div></td>
-        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">实际聚类数目</span></div></td>
-        <td width="5%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">热点词数</span></div></td>
+        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">索引文章基数</span></div></td>
+        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">索引目录</span></div></td>
+
         
-        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">聚类开始时间</span></div></td>
-        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">聚类结束时间</span></div></td>
+        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">索引开始时间</span></div></td>
+        <td width="15%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">索引结束时间</span></div></td>
+        <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">是否被覆盖</span></div></td>
+        
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">是否当前配置</span></div></td>
         <td width="10%" height="20" bgcolor="d3eaef" class="STYLE6"><div align="center"><span class="STYLE10">设为当前配置</span></div></td>
       </tr>
-     <c:forEach items="${clusterConfigList}" var="clusterConfig" begin="0"  varStatus="s">
+     <c:forEach items="${indexConfigList}" var="indexConfig" begin="0"  varStatus="s">
       
       <tr>
         <td height="20" bgcolor="#FFFFFF"><div align="center">
           <input style="width:100%;" type="checkbox" name="checkbox2" id="checkbox2" />
         </div></td>
         <td height="20" bgcolor="#FFFFFF" class="STYLE6"><div align="center"><span class="STYLE19">${s.index+1}</span></div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.admin.name}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.clcwebPageNum}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.clcClusterNum}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><c:if test="${clusterConfig.realClusterNum==0 }">还未进行聚类</c:if><c:if test="${clusterConfig.realClusterNum>0}">${clusterConfig.realClusterNum}</c:if></div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">${clusterConfig.clcWordNum}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.clcStartTime}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${clusterConfig.clcEndTime}</div></td>
-        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><c:if test="${clusterConfig.present==true }">是</c:if><c:if test="${clusterConfig.present==false }">否</c:if></div></td>
-        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/crawler/cluster/clusterConfig_present?clusterConfig.id=${clusterConfig.id }">设置为当前</a></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${indexConfig.admin.name}</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${indexConfig.webpagenum}</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${indexConfig.dir}</div></td>
+        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21">${indexConfig.startTime}</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center">${indexConfig.endTime}</div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><c:if test="${indexConfig.overRide==true }">是</c:if><c:if test="${indexConfig.overRide==false }">否</c:if></div></td>
+        <td height="20" bgcolor="#FFFFFF" class="STYLE19"><div align="center"><c:if test="${indexConfig.present==true }">是</c:if><c:if test="${indexConfig.present==false }">否</c:if></div></td>
+        <td height="20" bgcolor="#FFFFFF"><div align="center" class="STYLE21"><a href="/crawler/index/indexConfig_present?indexConfig.id=${indexConfig.id }">设置为当前</a></div></td>
       </tr>
-      
      </c:forEach> 
     </table></td>
   </tr>
-  
   <tr>
     <td height="30"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -124,8 +122,8 @@ body {
     </table></td>
   </tr>
 </table>
-		<a href="/crawler/cluster/clusterConfig_startCluster">cluster</a>  
-		<a href="/crawler/console/ClusterManagement/addClusterConfig.jsp"><input type="button" value="增加配置"></a>
+		<a href="/crawler/cluster/indexConfig_startIndex">index</a>  
+		<a href="/crawler/console/IndexManagement/addIndexConfig.jsp"><input type="button" value="增加配置"></a>
 	</div>
 </body>
 </html>

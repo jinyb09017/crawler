@@ -47,12 +47,32 @@
   <property name="sessionFactory" ref="sessionFactory">
   </property>
 </bean>
+
+<bean id="indexHistoryDao" class="com.jinyb.crawler.dao.impl.IndexHistoryDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+
+<bean id="indexConfigDao" class="com.jinyb.crawler.dao.impl.IndexConfigDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
 <bean id="wordDao" class="com.jinyb.crawler.dao.impl.WordDaoImpl" scope="prototype">
   <property name="sessionFactory" ref="sessionFactory">
   </property>
 </bean>
 
 <bean id="webConfigDao" class="com.jinyb.crawler.dao.impl.WebConfigDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+
+<bean id="articleDao" class="com.jinyb.crawler.dao.impl.ArticleDaoImpl" scope="prototype">
+  <property name="sessionFactory" ref="sessionFactory">
+  </property>
+</bean>
+
+<bean id="columnDao" class="com.jinyb.crawler.dao.impl.ColumnDaoImpl" scope="prototype">
   <property name="sessionFactory" ref="sessionFactory">
   </property>
 </bean>
