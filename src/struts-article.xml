@@ -13,7 +13,11 @@
 			<result name="forwardAdd">/console/ArticleManagement/addArticle.jsp</result>
 			<result name="edit">/console/ArticleManagement/editArticle.jsp</result>
 			<result name="add" type="redirectAction">article_list</result>
-			<result name="detail">/ArticleManagement/aticleShow.jsp</result>
+			<result name="aboutUs">/AboutManagement/aboutUs.jsp</result>
+			<result name="contactUs">/AboutManagement/contactUs.jsp</result>
+			<result name="kownledge">/AboutManagement/knowledge.jsp</result>
+			<result name="detail">/AboutManagement/detailArticle.jsp</result>
+			
 		</action>
 		
 	</package>

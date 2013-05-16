@@ -11,7 +11,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>关于我们</title>
+<title>知识天地</title>
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
@@ -70,11 +70,11 @@
         <div class="clr"></div>
         
         <div class="gadget">
-        <h3>关于我们</h3>
+        <h3>知识普及</h3>
           <div class="clr"></div>
           <ul class="ex_menu">
-            <c:forEach items="${column.article }" var="article">
-                     <li><a href="article/article_detail?article.id=${article.id }" title="${article.title }">${article.title }</a></li>
+            <c:forEach items="" var="article">
+                     <li><a href="article/article_detail?article.id=" title=""></a></li>
             </c:forEach>
            
           </ul>

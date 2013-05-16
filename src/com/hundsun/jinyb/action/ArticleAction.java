@@ -133,5 +133,85 @@ public class ArticleAction extends BaseAction{
 		httpRequest.setAttribute("article", n);
 		return "detail";
 	}
+	
+	public String aboutUs()
+	{
+		String content="About Us";
+		Column column=null;
+		List<Column> columnList=columnDao.queryByCondition("from Column c where c.column='"+content+"'");
+		if(columnList.size()!=0)
+		{
+			column = columnList.get(0);
+			httpRequest.setAttribute("column", column);
+		}
+		//Column column=columnDao.queryByCondition("");
+		if(article!=null&&article.getId()!=null)
+		{
+			Article art=articleDao.queryById(article.getId());
+			httpRequest.setAttribute("article", art);
+			
+		}
+		else
+		{
+			List<Article> articleList=articleDao.queryByCondition("from Article a where a.tid='"+column.getId()+"' and a.recomend=true order by time ");
+			httpRequest.setAttribute("article", articleList.get(0));
+
+		}
+				
+		return "aboutUs";
+	}
+	public String contactUs()
+	{
+		String content="Contact Us";
+		Column column=null;
+		List<Column> columnList=columnDao.queryByCondition("from Column c where c.column='"+content+"'");
+		if(columnList.size()!=0)
+		{
+			column = columnList.get(0);
+			httpRequest.setAttribute("column", column);
+		}
+		//Column column=columnDao.queryByCondition("");
+		if(article!=null&&article.getId()!=null)
+		{
+			Article art=articleDao.queryById(article.getId());
+			httpRequest.setAttribute("article", art);
+			
+		}
+		else
+		{
+			List<Article> articleList=articleDao.queryByCondition("from Article a where a.tid='"+column.getId()+"' and a.recomend=true order by time ");
+			httpRequest.setAttribute("article", articleList.get(0));
+
+		}
+
+		return "contactUs";
+	}
+	public String kownledge()
+	{
+		String content="知识天地";
+		Column column=null;
+		List<Column> columnList=columnDao.queryByCondition("from Column c where c.column='"+content+"'");
+		if(columnList.size()!=0)
+		{
+			column = columnList.get(0);
+			httpRequest.setAttribute("column", column);
+		}
+		//Column column=columnDao.queryByCondition("");
+		if(article!=null&&article.getId()!=null)
+		{
+			Article art=articleDao.queryById(article.getId());
+			httpRequest.setAttribute("article", art);
+			
+		}
+		else
+		{
+			List<Article> articleList=articleDao.queryByCondition("from Article a where a.tid='"+column.getId()+"' and a.recomend=true order by time ");
+			httpRequest.setAttribute("article", articleList.get(0));
+
+		}
+
+		return "kownledge";
+	}
+	
 
 }

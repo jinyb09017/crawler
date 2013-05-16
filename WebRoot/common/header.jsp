@@ -10,7 +10,7 @@
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>首页--网络主题爬虫系统</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -39,10 +39,10 @@
           <li class="active"><a href="webinfeng/admin_index" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">首页</a></li>
           <li><a href="webinfeng/clusterResult_list" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">聚类列表</a></li>
           <li><a href="webinfeng/word_list" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">热点词表</a></li>
-          <li><a href="blog.html" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">新闻搜索</a></li>
-          <li><a href="blog.html" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">知识普及</a></li>
-          <li><a href="AboutManagement/messageUs.jsp" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">Contact Us</a></li>
-           <li><a href="AboutManagement/aboutUs.jsp" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">About Us</a></li>
+          <li><a href="article/article_contactUs" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">新闻搜索</a></li>
+          <li><a href="article/article_kownledge" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">知识普及</a></li>
+          <li><a href="article/article_contactUs" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">Contact Us</a></li>
+           <li><a href="article/article_aboutUs" style="border-top-right-radius: 6px; border-top-left-radius: 6px;">About Us</a></li>
         </ul>
       </div>
       <div class="clr"></div>

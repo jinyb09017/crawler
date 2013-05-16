@@ -31,13 +31,13 @@ body {background: white;}
         <li><span id="lable">索引开始时间：</span><span id="content">${indexConfig.startTime }</span></li>
         <li><span id="lable">索引结束时间：</span><span id="content">${indexConfig.endTime }</span></li>
 
-        <li><span id="lable">索引文章基数：</span><span id="content">${webConfig.webpagenum }</span></li>
+        <li><span id="lable">索引文章基数：</span><span id="content">${indexConfig.webpagenum }</span></li>
         <li><span id="lable">是否当前配置：</span><span id="content"><c:if test="${indexConfig.present==true }">是</c:if><c:if test="${indexConfig.present==false }">否</c:if></span></li>
         <li><span id="lable">是否已经覆盖：</span><span id="content"><c:if test="${indexConfig.overRide==true }">是</c:if><c:if test="${indexConfig.overRide==false }">否</c:if></span></li>
 
         
      </ul>
-     <form id="index" action="index/index_startIndex" method="post">
+     <form id="index" action="index/myIndex_startIndex" method="post">
 		   <input type="checkbox" value="是否确认当前配置">
 		   <input type="submit" value="开始爬取">
 	 </form>

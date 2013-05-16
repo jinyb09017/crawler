@@ -6,14 +6,18 @@ package com.hundsun.jinyb.action;
 import java.util.List;
 
 import com.jinyb.crawler.constants.Constant;
+import com.jinyb.crawler.dao.ArticleDao;
 import com.jinyb.crawler.dao.ClusterConfigDao;
 import com.jinyb.crawler.dao.ClusterHistoryDao;
 import com.jinyb.crawler.dao.ClusterResultDao;
+import com.jinyb.crawler.dao.ColumnDao;
 import com.jinyb.crawler.dao.WebConfigDao;
 import com.jinyb.crawler.dao.WordDao;
+import com.jinyb.crawler.entity.Article;
 import com.jinyb.crawler.entity.ClusterConfig;
 import com.jinyb.crawler.entity.ClusterHistory;
 import com.jinyb.crawler.entity.ClusterResult;
+import com.jinyb.crawler.entity.Column;
 import com.jinyb.crawler.entity.News;
 import com.jinyb.crawler.entity.WebConfig;
 import com.jinyb.crawler.entity.Word;
@@ -30,6 +34,28 @@ public class IndexAction extends BaseAction{
 	private ClusterHistoryDao clusterHistoryDao;
 	private ClusterConfigDao clusterConfigDao;
 	private WebConfigDao webConfigDao;
+	private ArticleDao articleDao;
+	private ColumnDao columnDao;
+	private Article article;
+	
+	public Article getArticle() {
+		return article;
+	}
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+	public ArticleDao getArticleDao() {
+		return articleDao;
+	}
+	public void setArticleDao(ArticleDao articleDao) {
+		this.articleDao = articleDao;
+	}
+	public ColumnDao getColumnDao() {
+		return columnDao;
+	}
+	public void setColumnDao(ColumnDao columnDao) {
+		this.columnDao = columnDao;
+	}
 	public ClusterConfigDao getClusterConfigDao() {
 		return clusterConfigDao;
 	}
@@ -38,8 +64,13 @@ public class IndexAction extends BaseAction{
 	}
 	public String index()
 	{
-		ClusterHistory clusterHistory=clusterHistoryDao.queryByConditions("from ClusterHistory c where c.present=?", new Object[]{true}).get(0);//得到当前历史配置
-		Constant.CLUSTER_HISTORY_VESION=clusterHistory.getId();//设置当前历史
+		List<ClusterHistory> clusterHistoryList=clusterHistoryDao.queryByConditions("from ClusterHistory c where c.present=?", new Object[]{true});
+		if(clusterHistoryList.size()!=0)
+		{
+			Constant.CLUSTER_HISTORY_VESION=clusterHistoryList.get(0).getId();//设置当前历史
+		}
+		
+		
 		
 		
 		//get the cluster result
@@ -49,7 +80,7 @@ public class IndexAction extends BaseAction{
 		List<Word> wordList=wordDao.queryByConditions("from Word w where w.whId=?", new Object[]{Constant.CLUSTER_HISTORY_VESION});
 		httpRequest.setAttribute("wordList", wordList);
 		
-		if(!session.containsKey("webConfig"))
+		if(!session.containsKey("webConfig")&&webConfigDao.queryList().size()!=0)
 		{
 			WebConfig webConfig=webConfigDao.queryList().get(0);
 			session.put("webConfig", webConfig);//add to the session as a global var

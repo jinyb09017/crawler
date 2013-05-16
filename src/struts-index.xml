@@ -16,6 +16,10 @@
 						
 			<result name="index" type="redirectAction">indexConfig_list</result>
 			<result name="error" >/console/IndexManagement/addIndexConfig.jsp</result>
+			
+			<result name="aboutUs">/AboutManagement/aboutUs.jsp</result>
+			<result name="contactUs">/AboutManagement/contactUs.jsp</result>
+			<result name="knowledge">/AboutManagement/knowledge.jsp</result>
 		</action>
 		
 		<action name="indexHistory_*" class="com.hundsun.jinyb.action.IndexHistoryAction" method="{1}">
@@ -29,8 +33,11 @@
 			<result name="indexOver" type="redirectAction">indexHistory_list</result>
 		</action>
 		
-	
 		
+	
+		<action name="myIndex_*" class="com.hundsun.jinyb.action.MyIndexAction" method="{1}">
+			<result name="myIndexOver" type="redirectAction">indexHistory_list</result>
+		</action>
 		
 		
 		

@@ -1,3 +1,5 @@
-#Sat May 04 19:47:02 CST 2013
+#Thu May 16 19:51:29 CST 2013
 eclipse.preferences.version=1
 encoding//WebRoot/common/footer.jsp=UTF-8
+encoding//src/com/jinyb/crawler/analyzer/ICTCLASAnalyzer.java=UTF-8
+encoding//src/com/jinyb/crawler/analyzer/ICTCLASTokenizer.java=UTF-8

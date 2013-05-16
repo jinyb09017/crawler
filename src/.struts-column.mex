@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="column" location="10,10" size="280,210">
+    <action name="column_*" location="65,50" size="150,125">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="columnIndex.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="editColumn.jsp" />
+      </result>
+      <result name="add" />
+      <result name="del" />
+      <result name="upd" />
+    </action>
+  </package>
+  <webResource name="columnIndex.jsp" path="/console/ColumnManagement/columnIndex.jsp" location="75,262" size="150,55" />
+  <webResource name="editColumn.jsp" path="/console/ColumnManagement/editColumn.jsp" location="415,70" size="150,55" />
+</Struts2Diagram>
+
